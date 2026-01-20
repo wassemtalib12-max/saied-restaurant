@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التواصل - مطعم ومطبخ سعيد بنوب</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/logo.png">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2815/2815428.png" alt="شعار المطعم" id="logo-img">
+                    <span id="restaurant-name">مطعم ومطبخ سعيد بنوب</span>
+                </a>
+            </div>
+            
+            <button class="menu-toggle" aria-label="فتح/إغلاق القائمة">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link" id="nav-home">الرئيسية</a></li>
+                <li><a href="menu.html" class="nav-link" id="nav-menu">قائمة الطعام</a></li>
+                <li><a href="ingredients.html" class="nav-link" id="nav-ingredients">المكونات</a></li>
+                <li><a href="contact.html" class="nav-link active" id="nav-contact">التواصل</a></li>
+                <li>
+                    <button class="lang-switch" id="lang-switch">
+                        <span>English</span>
+                        <i class="fas fa-globe"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- صفحة التواصل -->
+    <section class="contact-page section-padding">
+        <div class="container">
+            <h2 class="section-title" id="contact-title">تواصل معنا</h2>
+            <p class="section-subtitle" id="contact-subtitle">نحن هنا لخدمتك</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3 id="contact-location-title">موقعنا</h3>
+                    <p id="contact-address">الدولة: اليمن<br>المدينة: حضرموت – المكلا<br>العنوان: المكلا، فوة، بجانب المؤسسة العامة للكهرباء</p>
+                    
+                    <div class="contact-details">
+                        <ul>
+                            <li>
+                                <i class="fas fa-phone"></i>
+                                <span id="contact-phone">+967 123 456 789</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <span id="contact-email">info@saiedbnoub.com</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-clock"></i>
+                                <span>ساعات العمل: يومياً من 10 صباحاً حتى 12 منتصف الليل</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="whatsapp-box">
+                        <h4 id="contact-whatsapp-title">تواصل مباشر</h4>
+                        <div class="contact-actions">
+    <a href="tel:+967123456789" class="btn btn-call">
+        <i class="fas fa-phone"></i>
+        اتصال مباشر
+    </a>
+
+    <a href="https://wa.me/967123456789?text=مرحباً، أود الاستفسار عن قائمة الطعام"
+       class="btn btn-whatsapp"
+       target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        واتساب
+    </a>
+</div>
+
+                        
+                    </div>
+                </div>
+                
+               <div class="map-container">
+    <iframe
+        src="https://www.google.com/maps?q=المكلا+فوة+بجانب+المؤسسة+العامة+للكهرباء&output=embed"
+        width="100%"
+        height="100%"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2815/2815428.png" alt="شعار المطعم">
+                    <h3 id="footer-name">مطعم ومطبخ سعيد بنوب</h3>
+                    <p id="footer-tagline">نكهة حضرموت الأصيلة</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4 id="quick-links-title">روابط سريعة</h4>
+                    <ul>
+                        <li><a href="index.html" id="footer-home">الرئيسية</a></li>
+                        <li><a href="menu.html" id="footer-menu">قائمة الطعام</a></li>
+                        <li><a href="ingredients.html" id="footer-ingredients">المكونات</a></li>
+                        <li><a href="contact.html" id="footer-contact">التواصل</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4 id="contact-info-title">معلومات التواصل</h4>
+                    <ul>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span id="footer-address">المكلا، فوة، بجانب المؤسسة العامة للكهرباء</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span id="footer-phone">+967 123 456 789</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span id="footer-email">info@saiedbnoub.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p id="copyright">© 2023 مطعم ومطبخ سعيد بنوب. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- الأكواد JavaScript -->
+    <script src="script.js"></script>
+    <script src="lang.js"></script>
+</body>
+</html>

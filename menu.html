@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قائمة الطعام - مطعم ومطبخ سعيد بنوب</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/logo.png">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2815/2815428.png" alt="شعار المطعم" id="logo-img">
+                    <span id="restaurant-name">مطعم ومطبخ سعيد بنوب</span>
+                </a>
+            </div>
+            
+            <button class="menu-toggle" aria-label="فتح/إغلاق القائمة">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link" id="nav-home">الرئيسية</a></li>
+                <li><a href="menu.html" class="nav-link active" id="nav-menu">قائمة الطعام</a></li>
+                <li><a href="ingredients.html" class="nav-link" id="nav-ingredients">المكونات</a></li>
+                <li><a href="contact.html" class="nav-link" id="nav-contact">التواصل</a></li>
+                <li>
+                    <button class="lang-switch" id="lang-switch">
+                        <span>English</span>
+                        <i class="fas fa-globe"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- صفحة القائمة -->
+    <section class="menu-page section-padding">
+        <div class="container">
+            <h2 class="section-title" id="menu-title">قائمة الطعام</h2>
+            <p class="section-subtitle" id="menu-subtitle">تذوق أشهى الأطباق اليمنية</p>
+            
+            <!-- أزرار التصنيفات -->
+            <div class="menu-categories">
+                <button class="category-btn active" data-category="meat" id="category-meat">اللحوم</button>
+                <button class="category-btn" data-category="rice" id="category-rice">الأرز</button>
+                <button class="category-btn" data-category="fatta" id="category-fatta">الفتة</button>
+                <button class="category-btn" data-category="kunafa" id="category-kunafa">الكنافة</button>
+                <button class="category-btn" data-category="juice" id="category-juice">العصائر</button>
+                <button class="category-btn" data-category="desserts" id="category-desserts">الحلويات</button>
+                <button class="category-btn" data-category="parties" id="category-parties">الولائم والحفلات</button>
+            </div>
+            
+            <!-- قسم اللحوم -->
+            <div class="menu-category active" id="meat">
+                <h3>قسم اللحوم</h3>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="لحم مندي">
+                        <div class="item-info">
+                            <h4>لحم مندي</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="لحم مضبي">
+                        <div class="item-info">
+                            <h4>لحم مضبي</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" alt="لحم مقلقل">
+                        <div class="item-info">
+                            <h4>لحم مقلقل</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="لحم برم">
+                        <div class="item-info">
+                            <h4>لحم برم</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- قسم الأرز -->
+            <div class="menu-category" id="rice">
+                <h3>قسم الأرز</h3>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" alt="رز برياني">
+                        <div class="item-info">
+                            <h4>رز برياني</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1563379091339-03246963d9d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="رز مضغوط">
+                        <div class="item-info">
+                            <h4>رز مضغوط</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1025&q=80" alt="رز كبسة">
+                        <div class="item-info">
+                            <h4>رز كبسة</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1516684732162-798a0062be99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="رز أبيض">
+                        <div class="item-info">
+                            <h4>رز أبيض</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="رز مندي">
+                        <div class="item-info">
+                            <h4>رز مندي</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- قسم الفتة -->
+            <div class="menu-category" id="fatta">
+                <h3>قسم الفتة</h3>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="فتة عادي">
+                        <div class="item-info">
+                            <h4>فتة عادي</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="فتة ملكي">
+                        <div class="item-info">
+                            <h4>فتة ملكي</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1563379091339-03246963d9d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="عريكة">
+                        <div class="item-info">
+                            <h4>عريكة</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1025&q=80" alt="فتة لحم">
+                        <div class="item-info">
+                            <h4>فتة لحم</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1180&q=80" alt="مشكل خضار">
+                        <div class="item-info">
+                            <h4>مشكل خضار</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- قسم الكنافة -->
+            <div class="menu-category" id="kunafa">
+                <h3>قسم الكنافة</h3>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1025&q=80" alt="كنافة بالقشطة">
+                        <div class="item-info">
+                            <h4>كنافة بالقشطة</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1089&q=80" alt="كنافة كاكاو">
+                        <div class="item-info">
+                            <h4>كنافة كاكاو</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="كنافة جبن">
+                        <div class="item-info">
+                            <h4>كنافة جبن</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- قسم العصائر -->
+            <div class="menu-category" id="juice">
+                <h3>قسم العصائر</h3>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1257&q=80" alt="مشكل حليب">
+                        <div class="item-info">
+                            <h4>مشكل حليب</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1623065157671-0b036818a6d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" alt="مشكل فواكه">
+                        <div class="item-info">
+                            <h4>مشكل فواكه</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1623427452977-92c0efc4a98e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="عصير فراولة">
+                        <div class="item-info">
+                            <h4>عصير فراولة</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1621609764095-b1bbe3e5c6c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="عصير ليمون">
+                        <div class="item-info">
+                            <h4>عصير ليمون</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="عصير برتقال">
+                        <div class="item-info">
+                            <h4>عصير برتقال</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="ببسي">
+                        <div class="item-info">
+                            <h4>ببسي</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- قسم الحلويات -->
+            <div class="menu-category" id="desserts">
+                <h3>قسم الحلويات</h3>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1227&q=80" alt="تشيز">
+                        <div class="item-info">
+                            <h4>تشيز</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1567306301408-9b74779a11af?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="فواكه">
+                        <div class="item-info">
+                            <h4>فواكه</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="سلطة فواكه">
+                        <div class="item-info">
+                            <h4>سلطة فواكه</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- قسم الولائم والحفلات -->
+            <div class="menu-category" id="parties">
+                <h3>قسم الولائم والحفلات</h3>
+                <div class="text-center">
+                    <p style="font-size: 1.3rem; color: var(--primary-color); margin-bottom: 30px;">استعداد تام لجميع الولائم والحفلات</p>
+                    <a href="contact.html" class="btn btn-primary" id="contact-btn">تواصل معنا للحجز</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2815/2815428.png" alt="شعار المطعم">
+                    <h3 id="footer-name">مطعم ومطبخ سعيد بنوب</h3>
+                    <p id="footer-tagline">نكهة حضرموت الأصيلة</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4 id="quick-links-title">روابط سريعة</h4>
+                    <ul>
+                        <li><a href="index.html" id="footer-home">الرئيسية</a></li>
+                        <li><a href="menu.html" id="footer-menu">قائمة الطعام</a></li>
+                        <li><a href="ingredients.html" id="footer-ingredients">المكونات</a></li>
+                        <li><a href="contact.html" id="footer-contact">التواصل</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4 id="contact-info-title">معلومات التواصل</h4>
+                    <ul>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span id="footer-address">المكلا، فوة، بجانب المؤسسة العامة للكهرباء</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span id="footer-phone">+967 123 456 789</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span id="footer-email">info@saiedbnoub.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p id="copyright">© 2023 مطعم ومطبخ سعيد بنوب. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- الأكواد JavaScript -->
+    <script src="script.js"></script>
+    <script src="lang.js"></script>
+</body>
+</html>
