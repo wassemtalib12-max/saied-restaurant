@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>معرض صور الولائم والحفلات - مطعم ومطبخ سعيد بنوب</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* أنماط خاصة بصفحة المعرض */
+        body {
+            background: linear-gradient(135deg, #f9f9f9 0%, #fff 100%);
+            min-height: 100vh;
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            border-radius: 20px;
+            color: white;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: float 20s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes float {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .gallery-header h2 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .gallery-header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+            opacity: 0.95;
+        }
+
+        .gallery-subtitle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .gallery-subtitle i {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* تصميم متطور للمعرض */
+        .gallery-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+            padding: 25px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+        }
+
+        .filter-btn {
+            padding: 12px 25px;
+            border: none;
+            background: #f5f5f5;
+            color: #555;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .filter-btn:hover {
+            background: #eee;
+            transform: translateY(-2px);
+        }
+
+        .filter-btn.active {
+            background: var(--primary-color);
+            color: white;
+            box-shadow: 0 5px 15px rgba(198, 40, 40, 0.3);
+        }
+
+        /* تصميم متطور لصور المعرض */
+        .enhanced-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .gallery-card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transition: all 0.4s ease;
+            height: 280px;
+            cursor: pointer;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            color: white;
+            padding: 25px 20px 15px;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-card:hover .card-overlay {
+            transform: translateY(0);
+        }
+
+        .card-number {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .card-info {
+            text-align: right;
+        }
+
+        .card-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            color: var(--secondary-color);
+        }
+
+        .card-info p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        /* نموذج الضوء (Lightbox) */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .lightbox-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .lightbox-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            font-size: 2.5rem;
+            cursor: pointer;
+            z-index: 1001;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            color: var(--secondary-color);
+            transform: rotate(90deg);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 30px;
+            transform: translateY(-50%);
+        }
+
+        .lightbox-nav button {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-nav button:hover {
+            background: var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        /* شريط الإحصائيات */
+        .gallery-stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 60px 0;
+            padding: 30px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* قسم الإجراءات */
+        .gallery-actions {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 2px dashed rgba(0,0,0,0.1);
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        /* تصميم متجاوب */
+        @media (max-width: 768px) {
+            .gallery-header h2 {
+                font-size: 2.2rem;
+            }
+
+            .gallery-header p {
+                font-size: 1.1rem;
+            }
+
+            .enhanced-gallery {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 20px;
+            }
+
+            .gallery-card {
+                height: 250px;
+            }
+
+            .gallery-filters {
+                position: static;
+                margin: 20px 0;
+            }
+
+            .filter-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .stat-item {
+                min-width: 150px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .gallery-header {
+                padding: 30px 15px;
+            }
+
+            .gallery-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .enhanced-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-card {
+                height: 300px;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- شريط التنقل (يمكن تضمينه إذا كان لديك ملف مشترك) -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/IMG-20260127-WA0017.jpg" alt="شعار المطعم" id="logo-img">
+                    <span id="restaurant-name">مطعم ومطبخ سعيد بنوب</span>
+                </a>
+            </div>
+            <a href="menu.html" class="back-btn">
+                <i class="fas fa-arrow-right"></i>
+                العودة للقائمة
+            </a>
+        </div>
+    </nav>
+
+    <!-- رأس الصفحة -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="gallery-header">
+                <h2><i class="fas fa-camera"></i> معرض صور الولائم والحفلات</h2>
+                <p>وثِّقنا أجمل اللحظات وأروع الذكريات من حفلاتنا وولائمنا الفاخرة</p>
+                <div class="gallery-subtitle">
+                    <i class="fas fa-star"></i>
+                    <span>انقر على أي صورة لعرضها بحجم أكبر</span>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+
+            <!-- فلترة الصور -->
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-layer-group"></i> الكل
+                </button>
+               
+            </div>
+
+            <!-- إحصائيات -->
+            <div class="gallery-stats">
+                <div class="stat-item">
+                    <span class="stat-number">400+</span>
+                    <span class="stat-label">حفلة ناجحة</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">18</span>
+                    <span class="stat-label">سنوات خبرة</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">رضا العملاء</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">دعم واستشارة</span>
+                </div>
+            </div>
+
+            <!-- معرض الصور المحسن -->
+            <div class="gallery-container">
+                <div class="enhanced-gallery">
+                    <!-- صورة 1 -->
+                    <div class="gallery-card" data-category="parties">
+                        <div class="card-number">1</div>
+                        <img src="images/IMG-20260127-WA0014.jpg" alt="ولائم فاخرة">
+                        
+                    </div>
+
+                    <!-- صورة 2 -->
+                    <div class="gallery-card" data-category="weddings">
+                        <div class="card-number">2</div>
+                        <img src="images/IMG-20260127-WA0014.jpg" alt="حفلات أعراس">
+                        
+                    </div>
+
+                    <!-- صورة 3 -->
+                    <div class="gallery-card" data-category="events">
+                        <div class="card-number">3</div>
+                        <img src="images/IMG-20260127-WA0014.jpg" alt="مناسبات خاصة">
+                        
+                    </div>
+
+                    <!-- صورة 4 -->
+                    <div class="gallery-card" data-category="family">
+                        <div class="card-number">4</div>
+                        <img src="images/IMG-20260127-WA0014.jpg" alt="عزائم عائلية">
+                       
+                    </div>
+
+                    <!-- صورة 5 -->
+                    <div class="gallery-card" data-category="parties">
+                        <div class="card-number">5</div>
+                        <img src="images/IMG-20260127-WA0014.jpg" alt="ولائم كبيرة">
+                        
+                    </div>
+
+                    <!-- صورة 6 -->
+                    <div class="gallery-card" data-category="events">
+                        <div class="card-number">6</div>
+                        <img src="images/IMG-20260127-WA0014.jpg" alt="مناسبات عمل">
+                       
+                    </div>
+
+                    <!-- صورة 7 -->
+                    <div class="gallery-card" data-category="weddings">
+                        <div class="card-number">7</div>
+                        <img src="images/IMG-20260127-WA0014.jpg" alt="حفلات خطوبة">
+                        
+                    </div>
+
+                    <!-- صورة 8 -->
+                    <div class="gallery-card" data-category="family">
+                        <div class="card-number">8</div>
+                        <img src="images/IMG-20260127-WA0014.jpg" alt="تجمعات عائلية">
+                       
+                    </div>
+                </div>
+            </div>
+
+            <!-- إجراءات -->
+            <div class="gallery-actions">
+                <h3 style="margin-bottom: 20px; color: var(--primary-color);">هل أعجبتك خدماتنا؟</h3>
+                <p style="color: #666; margin-bottom: 30px; max-width: 800px; margin: 0 auto 30px;">
+                    نحن جاهزون لتنظيم حفلتك القادمة وتقديم تجربة لا تُنسى لك ولضيوفك
+                </p>
+                <div class="action-buttons">
+                    <a href="contact.html" class="btn btn-primary">
+                        <i class="fas fa-calendar-check"></i>
+                        احجز حفلتك الآن
+                    </a>
+                    <a href="tel:+967123456789" class="btn btn-outline">
+                        <i class="fas fa-phone"></i>
+                        اتصل بنا للاستفسار
+                    </a>
+                    <a href="menu.html" class="btn btn-outline">
+                        <i class="fas fa-utensils"></i>
+                        عرض قائمة الطعام
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox للعرض الكامل -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <div class="lightbox-nav">
+            <button onclick="prevImage()"><i class="fas fa-chevron-right"></i></button>
+            <button onclick="nextImage()"><i class="fas fa-chevron-left"></i></button>
+        </div>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="">
+        </div>
+    </div>
+
+    <!-- JavaScript للمعرض -->
+    <script>
+        // متغيرات Lightbox
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll('.gallery-card img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        // فتح Lightbox
+        function openLightbox(index) {
+            currentImageIndex = index;
+            lightboxImg.src = images[index].src;
+            lightbox.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        // إغلاق Lightbox
+        function closeLightbox() {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // الصورة التالية
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            lightboxImg.src = images[currentImageIndex].src;
+        }
+
+        // الصورة السابقة
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            lightboxImg.src = images[currentImageIndex].src;
+        }
+
+        // إضافة أحداث النقر على الصور
+        images.forEach((img, index) => {
+            img.addEventListener('click', () => {
+                openLightbox(index);
+            });
+        });
+
+        // إغلاق Lightbox بالضغط على ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowRight') nextImage();
+            if (e.key === 'ArrowLeft') prevImage();
+        });
+
+        // فلترة الصور
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const galleryCards = document.querySelectorAll('.gallery-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // إزالة النشط من جميع الأزرار
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // إضافة النشط للزر المضغوط
+                button.classList.add('active');
+                
+                const filter = button.getAttribute('data-filter');
+                
+                galleryCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1)';
+                        }, 100);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.8)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // تأثيرات عند التمرير
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+                }
+            });
+        }, observerOptions);
+
+        // مراقبة العناصر
+        galleryCards.forEach(card => {
+            observer.observe(card);
+        });
+
+        // إضافة أنيميشن CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            .gallery-card {
+                opacity: 0;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+
+</body>
+</html>

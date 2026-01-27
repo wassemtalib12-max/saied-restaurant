@@ -4,7 +4,6 @@ const arabicText = {
     "restaurant-name": "مطعم ومطبخ سعيد بنوب",
     "nav-home": "الرئيسية",
     "nav-menu": "قائمة الطعام",
-    "nav-ingredients": "المكونات",
     "nav-contact": "التواصل",
     
     // القسم الرئيسي
@@ -41,7 +40,6 @@ const arabicText = {
     "quick-links-title": "روابط سريعة",
     "footer-home": "الرئيسية",
     "footer-menu": "قائمة الطعام",
-    "footer-ingredients": "المكونات",
     "footer-contact": "التواصل",
     "contact-info-title": "معلومات التواصل",
     "footer-address": "المكلا، فوة، بجانب المؤسسة العامة للكهرباء",
@@ -64,8 +62,6 @@ const arabicText = {
     "category-parties": "الولائم والحفلات",
     
     // صفحة المكونات
-    "ingredients-title": "مكوناتنا",
-    "ingredients-subtitle": "نستخدم أجود المكونات الطازجة",
     
     // صفحة التواصل
     "contact-title": "تواصل معنا",
@@ -85,7 +81,6 @@ const englishText = {
     "restaurant-name": "Saied Bnoub Restaurant & Kitchen",
     "nav-home": "Home",
     "nav-menu": "Menu",
-    "nav-ingredients": "Ingredients",
     "nav-contact": "Contact",
     
     // القسم الرئيسي

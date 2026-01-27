@@ -17,7 +17,7 @@
         <div class="container">
             <div class="logo">
                 <a href="index.html">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2815/2815428.png" alt="شعار المطعم" id="logo-img">
+                    <img src="images/IMG-20260127-WA0017.jpg" alt="شعار المطعم" id="logo-img">
                     <span id="restaurant-name">مطعم ومطبخ سعيد بنوب</span>
                 </a>
             </div>
@@ -29,7 +29,6 @@
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link active" id="nav-home">الرئيسية</a></li>
                 <li><a href="menu.html" class="nav-link" id="nav-menu">قائمة الطعام</a></li>
-                <li><a href="ingredients.html" class="nav-link" id="nav-ingredients">المكونات</a></li>
                 <li><a href="contact.html" class="nav-link" id="nav-contact">التواصل</a></li>
                 <li>
                     <button class="lang-switch" id="lang-switch">
@@ -67,8 +66,8 @@
                 <div class="about-images">
                     <div class="image-grid">
                         <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="ديكور المطعم">
-                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1081&q=80" alt="أطباق المطعم">
-                        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="طباخ المطعم">
+                        <img src="images/IMG-20260127-WA0016.jpg" alt="أطباق المطعم">
+                        <img src="images/IMG-20260127-WA0025.jpg" alt="طباخ المطعم">
                         <img src="https://images.unsplash.com/photo-1578474846511-04ba529f0b88?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="زبائن المطعم">
                     </div>
                 </div>
@@ -84,7 +83,7 @@
             
             <div class="dishes-grid">
                 <div class="dish-card">
-                    <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="لحم مندي">
+                    <img src="images/IMG-20260127-WA0028.jpg" alt="لحم مندي">
                     <div class="dish-info">
                         <h3 id="dish-1-title">لحم مندي</h3>
                         <p id="dish-1-desc">لحم ضأن مطهو ببطء مع الأرز المنقوع بالبهارات</p>
@@ -92,7 +91,7 @@
                 </div>
                 
                 <div class="dish-card">
-                    <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" alt="رز برياني">
+                    <img src="images/IMG-20260127-WA0031.jpg" alt="رز برياني">
                     <div class="dish-info">
                         <h3 id="dish-2-title">رز برياني</h3>
                         <p id="dish-2-desc">أرز معمر بالبهارات واللحم والدجاج والخضروات</p>
@@ -116,24 +115,42 @@
 
     <!-- قسم التواصل السريع -->
     <section class="quick-contact section-padding">
-        <div class="container">
-            <div class="quick-contact-content">
-                <h2 id="quick-contact-title">هل ترغب في طلب وجبة؟</h2>
-                <p id="quick-contact-text">يمكنك التواصل معنا مباشرة عبر واتساب لطلب وجبتك المفضلة أو لحجز طاولة</p>
-                <a href="https://wa.me/967123456789?text=مرحباً، أود الاستفسار عن قائمة الطعام" class="btn btn-whatsapp" target="_blank" id="whatsapp-btn">
+    <div class="container">
+        <div class="quick-contact-content">
+            <h2 id="quick-contact-title">هل ترغب في طلب وجبة؟</h2>
+            <p id="quick-contact-text">
+                يمكنك التواصل معنا مباشرة عبر واتساب أو الاتصال بنا لطلب وجبتك المفضلة أو حجز طاولة
+            </p>
+
+            <div class="contact-buttons">
+                <!-- زر واتساب -->
+                <a href="https://wa.me/967771534875?text=مرحباً، أود الاستفسار عن قائمة الطعام"
+                   class="btn btn-whatsapp"
+                   target="_blank"
+                   id="whatsapp-btn">
                     <i class="fab fa-whatsapp"></i>
-                    تواصل عبر واتساب
+                    واتساب
+                </a>
+
+                <!-- زر اتصال -->
+                <a href="tel:+967771534875"
+                   class="btn btn-call"
+                   id="call-btn">
+                    <i class="fas fa-phone"></i>
+                    اتصال مباشر
                 </a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- الفوتر -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2815/2815428.png" alt="شعار المطعم">
+                    <img src="images/IMG-20260127-WA0017.jpg" alt="شعار المطعم">
                     <h3 id="footer-name">مطعم ومطبخ سعيد بنوب</h3>
                     <p id="footer-tagline">نكهة حضرموت الأصيلة</p>
                 </div>
@@ -143,7 +160,6 @@
                     <ul>
                         <li><a href="index.html" id="footer-home">الرئيسية</a></li>
                         <li><a href="menu.html" id="footer-menu">قائمة الطعام</a></li>
-                        <li><a href="ingredients.html" id="footer-ingredients">المكونات</a></li>
                         <li><a href="contact.html" id="footer-contact">التواصل</a></li>
                     </ul>
                 </div>
@@ -157,18 +173,15 @@
                         </li>
                         <li>
                             <i class="fas fa-phone"></i>
-                            <span id="footer-phone">+967 123 456 789</span>
+                            <span >771534875</span>
                         </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <span id="footer-email">info@saiedbnoub.com</span>
-                        </li>
+                        
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p id="copyright">© 2023 مطعم ومطبخ سعيد بنوب. جميع الحقوق محفوظة.</p>
+                <p>© 2026 مطعم ومطبخ سعيد بنوب. جميع الحقوق محفوظة.</p>
             </div>
         </div>
     </footer>
