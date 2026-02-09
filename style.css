@@ -365,6 +365,96 @@
         margin-left: auto;
     }
 
+    /* تعديلات خاصة للجوال لجعل الهيرو أصغر */
+@media (max-width: 768px) {
+    .hero {
+        height: 40vh !important; /* تصغير شديد للارتفاع */
+        margin-top: 60px; /* تقليل الهامش العلوي */
+        min-height: 250px; /* ارتفاع أدنى */
+    }
+    
+    .hero-content {
+        padding: 15px;
+        transform: scale(0.9); /* تصغير المحتوى */
+        transform-origin: center;
+    }
+    
+    #hero-title {
+        font-size: 1.4rem !important;
+        margin-bottom: 10px;
+        line-height: 1.2;
+    }
+    
+    #hero-subtitle {
+        font-size: 0.85rem !important;
+        margin-bottom: 15px;
+        line-height: 1.3;
+    }
+    
+    .hero-buttons {
+        gap: 8px;
+        margin-top: 10px;
+    }
+    
+    .hero-buttons .btn {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+        border-radius: 3px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        height: 35vh !important; /* أصغر */
+        min-height: 220px;
+    }
+    
+    .hero-content {
+        transform: scale(0.85); /* تصغير أكثر */
+        padding: 10px;
+    }
+    
+    #hero-title {
+        font-size: 1.2rem !important;
+    }
+    
+    #hero-subtitle {
+        font-size: 0.75rem !important;
+        margin-bottom: 10px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+        padding: 7px 12px;
+        margin-bottom: 5px;
+    }
+}
+
+/* للشاشات الصغيرة جداً */
+@media (max-width: 375px) {
+    .hero {
+        height: 30vh !important; /* أصغر بكثير */
+        min-height: 200px;
+    }
+    
+    #hero-title {
+        font-size: 1.1rem !important;
+    }
+    
+    #hero-subtitle {
+        font-size: 0.7rem !important;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
+
     /* الفوتر */
    /* فوتير صغير وثابت - سطر واحد في الجوال */
 .footer {
@@ -1319,363 +1409,4 @@ body {
         }
     }
 
-    /* قسم الهيرو - تعديلات للجوال */
-@media (max-width: 992px) {
-    .hero {
-        height: 70vh;
-        margin-top: 70px;
-    }
     
-    #hero-title {
-        font-size: 2.5rem;
-        margin-bottom: 15px;
-    }
-    
-    #hero-subtitle {
-        font-size: 1.1rem;
-        margin-bottom: 25px;
-        padding: 0 15px;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero {
-        height: 60vh;
-        margin-top: 65px;
-    }
-    
-    #hero-title {
-        font-size: 2rem;
-        margin-bottom: 15px;
-        padding: 0 10px;
-    }
-    
-    #hero-subtitle {
-        font-size: 1rem;
-        margin-bottom: 20px;
-        line-height: 1.5;
-    }
-    
-    .hero-buttons {
-        flex-direction: row;
-        justify-content: center;
-        gap: 10px;
-    }
-    
-    .btn {
-        padding: 10px 20px;
-        font-size: 1rem;
-        min-width: 140px;
-    }
-}
-
-@media (max-width: 576px) {
-    .hero {
-        height: 55vh;
-        margin-top: 60px;
-        background-position: center 30%;
-    }
-    
-    #hero-title {
-        font-size: 1.7rem;
-        margin-bottom: 12px;
-        padding: 0 15px;
-        line-height: 1.3;
-    }
-    
-    #hero-subtitle {
-        font-size: 0.95rem;
-        margin-bottom: 20px;
-        line-height: 1.4;
-        padding: 0 10px;
-    }
-    
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        width: 100%;
-        max-width: 280px;
-        margin: 0 auto;
-    }
-    
-    .hero-buttons .btn {
-        width: 100%;
-        max-width: 250px;
-        margin-bottom: 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero {
-        height: 50vh;
-        margin-top: 55px;
-        background-position: center 40%;
-    }
-    
-    #hero-title {
-        font-size: 1.5rem;
-        margin-bottom: 10px;
-    }
-    
-    #hero-subtitle {
-        font-size: 0.9rem;
-        margin-bottom: 18px;
-    }
-    
-    .hero-buttons {
-        max-width: 250px;
-    }
-    
-    .btn {
-        padding: 8px 16px;
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 360px) {
-    .hero {
-        height: 45vh;
-        margin-top: 50px;
-    }
-    
-    #hero-title {
-        font-size: 1.3rem;
-    }
-    
-    #hero-subtitle {
-        font-size: 0.85rem;
-    }
-    
-    .hero-buttons {
-        max-width: 220px;
-    }
-    
-    .btn {
-        padding: 7px 14px;
-        font-size: 0.85rem;
-    }
-}
-
-/* تحسين التباين للنصوص على الصورة */
-.hero-content {
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-}
-
-#hero-title, #hero-subtitle {
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
-}
-
-/* تحسينات للوضع الأفقي على الجوال */
-@media (max-height: 500px) and (orientation: landscape) {
-    .hero {
-        height: 70vh;
-        margin-top: 60px;
-    }
-    
-    #hero-title {
-        font-size: 1.8rem;
-        margin-bottom: 10px;
-    }
-    
-    #hero-subtitle {
-        font-size: 0.9rem;
-        margin-bottom: 15px;
-    }
-    
-    .hero-buttons {
-        flex-direction: row;
-        gap: 8px;
-    }
-    
-    .btn {
-        padding: 8px 16px;
-        font-size: 0.9rem;
-    }
-}
-
-/* تحسينات للشاشات ذات الكثافة العالية */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .hero {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-        url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80');
-    }
-}
-
-/* دعم للتوجه الأفقي على أجهزة آيباد */
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    .hero {
-        height: 65vh;
-    }
-    
-    #hero-title {
-        font-size: 2.2rem;
-    }
-    
-    #hero-subtitle {
-        font-size: 1.1rem;
-    }
-}
-
-/* تحسينات لشاشات كبيرة جداً */
-@media (min-width: 1400px) {
-    .hero {
-        height: 75vh;
-    }
-    
-    #hero-title {
-        font-size: 3.5rem;
-    }
-    
-    #hero-subtitle {
-        font-size: 1.5rem;
-    }
-}
-
-/* قسم المطور في الفوتر */
-.developer-section {
-    flex-shrink: 0;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-.developer-link {
-    color: #aaa;
-    text-decoration: none;
-    font-size: 0.7rem;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    padding: 4px 8px;
-    border-radius: 4px;
-    background: rgba(255, 255, 255, 0.05);
-    transition: all 0.3s ease;
-    border: 1px solid transparent;
-    white-space: nowrap;
-}
-
-.developer-link:hover {
-    color: var(--primary-color);
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-1px);
-}
-
-.dev-label {
-    color: #888;
-    font-size: 0.65rem;
-}
-
-.dev-name {
-    color: var(--primary-color);
-    font-weight: 600;
-    direction: ltr;
-    font-family: 'Courier New', monospace;
-}
-
-/* تحسين التصميم للجوال */
-@media (max-width: 992px) {
-    .developer-section {
-        margin-left: 8px;
-        margin-right: 8px;
-    }
-    
-    .developer-link {
-        font-size: 0.65rem;
-        padding: 3px 6px;
-        gap: 4px;
-    }
-    
-    .dev-label {
-        font-size: 0.6rem;
-    }
-    
-    .dev-name {
-        font-size: 0.65rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .developer-section {
-        order: 3; /* تغيير الترتيب إذا لزم الأمر */
-        margin-left: 5px;
-        margin-right: 5px;
-    }
-    
-    .developer-link {
-        font-size: 0.6rem;
-        padding: 2px 5px;
-        gap: 3px;
-    }
-    
-    /* إخفاء "طور بواسطة:" في الشاشات المتوسطة */
-    .dev-label {
-        display: none;
-    }
-    
-    .dev-name {
-        font-size: 0.6rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .developer-section {
-        margin-left: 3px;
-        margin-right: 3px;
-    }
-    
-    .developer-link {
-        padding: 2px 4px;
-        font-size: 0.55rem;
-        border-radius: 3px;
-    }
-    
-    .dev-name {
-        font-size: 0.55rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .developer-section {
-        display: flex;
-        align-items: center;
-    }
-    
-    .developer-link {
-        background: rgba(255, 255, 255, 0.03);
-        border: none;
-        padding: 1px 3px;
-    }
-    
-    .dev-name {
-        font-size: 0.5rem;
-    }
-}
-
-@media (max-width: 380px) {
-    /* إخفاء قسم المطور في الشاشات الصغيرة جداً */
-    .developer-section {
-        display: none;
-    }
-}
-
-/* تحسين لشاشات كبيرة */
-@media (min-width: 1200px) {
-    .developer-section {
-        margin-left: 15px;
-        margin-right: 15px;
-    }
-    
-    .developer-link {
-        font-size: 0.75rem;
-        padding: 5px 10px;
-    }
-    
-    .dev-label {
-        font-size: 0.7rem;
-    }
-    
-    .dev-name {
-        font-size: 0.75rem;
-    }
-}
