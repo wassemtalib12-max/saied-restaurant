@@ -99,7 +99,7 @@
                 </div>
                 
                 <div class="dish-card">
-                    <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1025&q=80" alt="كنافة">
+                    <img src="images/كنافة بالقشطة.png" alt="كنافة">
                     <div class="dish-info">
                         <h3 id="dish-3-title">كنافة</h3>
                         <p id="dish-3-desc">حلوى شرقية شهيرة بالقشطة أو الجبن</p>
@@ -145,46 +145,52 @@
 </section>
 
 
-    <!-- الفوتر -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="images/IMG-20260128-WA0001.jpg" alt="شعار المطعم">
-                    <h3 id="footer-name">مطعم ومطبخ سعيد بنوب</h3>
-                    <p id="footer-tagline">نكهة حضرموت الأصيلة</p>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-main">
+            <!-- الجزء العلوي مع الشعار والروابط -->
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="images/IMG-20260128-WA0001.jpg" alt="شعار المطعم" class="footer-logo">
+                    <div class="brand-text">
+                        <h4 id="footer-name">سعيد بنوب</h4>
+                        <p id="footer-tagline">نكهة حضرموت</p>
+                    </div>
                 </div>
                 
                 <div class="footer-links">
-                    <h4 id="quick-links-title">روابط سريعة</h4>
-                    <ul>
-                        <li><a href="index.html" id="footer-home">الرئيسية</a></li>
-                        <li><a href="menu.html" id="footer-menu">قائمة الطعام</a></li>
-                        <li><a href="contact.html" id="footer-contact">التواصل</a></li>
-                    </ul>
+                    <a href="index.html" id="footer-home">الرئيسية</a>
+                    <span class="separator">•</span>
+                    <a href="menu.html" id="footer-menu">القائمة</a>
+                    <span class="separator">•</span>
+                    <a href="contact.html" id="footer-contact">التواصل</a>
                 </div>
                 
-                <div class="footer-contact">
-                    <h4 id="contact-info-title">معلومات التواصل</h4>
-                    <ul>
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span id="footer-address">المكلا، فوة، بجانب المؤسسة العامة للكهرباء</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <span >771534875</span>
-                        </li>
-                        
-                    </ul>
+                <div class="social-icons">
+                    <!-- رابط واتساب مباشر -->
+                    <a href="https://wa.me/967771534875" target="_blank" aria-label="تواصل عبر واتساب" class="social-icon whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <!-- رابط اتصال مباشر -->
+                    <a href="tel:+967771534875" aria-label="اتصال مباشر" class="social-icon phone">
+                        <i class="fas fa-phone"></i>
+                    </a>
                 </div>
             </div>
             
+            <!-- الجزء السفلي مع العنوان وحقوق النشر -->
             <div class="footer-bottom">
-                <p>© 2026 مطعم ومطبخ سعيد بنوب. جميع الحقوق محفوظة.</p>
+                <div class="contact-info">
+                    <span id="footer-address">المكلا، فوة - بجانب المؤسسة العامة للكهرباء</span>
+                    <span class="phone-number">771534875 <i class="fas fa-phone-alt"></i></span>
+                </div>
+                <div class="copyright">
+                    <p>© 2026 مطعم ومطبخ سعيد بنوب</p>
+                </div>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
     <!-- الأكواد JavaScript -->
     <script src="script.js"></script>
